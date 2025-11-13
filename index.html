@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salesforce Agent Test</title>
+</head>
+<body>
+  <h1>Salesforce Service Agent Test Page</h1>
+  <p>If your Salesforce Embedded Service is configured correctly, the chat widget should appear below:</p>
+
+  <div id="embedded-messaging"></div>
+
+  <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'de'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00D2000000091ZB',
+				'Knowledge_Assistant_English',
+				'https://s24.my.site.com/ESWKnowledgeAssistantEn1763076054306',
+				{
+					scrt2URL: 'https://s24.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://s24.my.site.com/ESWKnowledgeAssistantEn1763076054306/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+</body>
+</html>
